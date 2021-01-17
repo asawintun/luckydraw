@@ -16,6 +16,12 @@
 
     $(document).ready(function () {
 
+        var cookieExist = $.cookie("luckydraw");  
+        if (cookieExist === undefined || cookieExist === 'undefined'){
+            window.location.href = '/login.html';
+        }
+
+
 //    Tooltip
         $('.tooltip-container').mouseenter(function () {
             $('.tooltip').slideDown('fast');

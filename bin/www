@@ -4,7 +4,7 @@ var debug = require('debug')('lucky-draw'),
     app = require('../app'),
     io = require('../lib/io');
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 3001);
 
 var server = http.createServer(app);
 

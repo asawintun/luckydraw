@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var sassMiddleware = require('node-sass-middleware')
+//var Loader = require('react-loader-spinner') 
 
 var routes = require('./routes/index');
 
@@ -16,6 +17,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(favicon());
 app.use(logger('dev'));
 app.use(bodyParser.json());
+//app.use(Loader());
 //app.use(bodyParser.urlencoded({
 //    extended: true
 //}));
@@ -33,6 +35,9 @@ app.use(sassMiddleware({
 }));
 app.use('/', routes);
 
+app.use((req, res) => {
+    res.status(404).redirect('/login.html')
+});
 /// catch 404 and forward to error handler
 app.use(function (req, res, next) {
     var err = new Error('Not Found');

@@ -94,6 +94,19 @@ router.get('/configs', (req, res) => {
     });
 });
 
+router.post('/auth', function(request, response) {
+    var username = request.body.username;
+    var password = request.body.password; 
+    if (username == 'fwd' && password == 'lucky') {   
+        response.cookie('luckydraw', 'logedin') 
+        response.redirect('/index.html'); 
+        response.end(); 
+    } else {
+        response.send('incorrect Username and Password!');
+        response.end();
+    }
+});
+
 var boardcastCandidates = function () {
     io.emitCandidates(candidates);
 };

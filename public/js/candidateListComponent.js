@@ -1,3 +1,4 @@
+
 (function ($, document, machine) {
 
     const Item = ({text, onDelete}) => (
@@ -65,7 +66,7 @@
     };
 
     class InputForm extends React.Component {
-
+ 
         constructor(props) {
             super(props);
             this.handleAdd = this.handleAdd.bind(this);
@@ -80,8 +81,8 @@
             }
    
         } 
-
-        componentDidMount() {
+ 
+        componentDidMount() { 
             fetch("/configs")
                 .then((res) => res.json())
                 .then((result) => {
@@ -212,11 +213,11 @@
         }
 
        
-        render() {
-
+        render() { 
+            
             return (
                 <div>
-                    <h1>  FWD Life Insurance Public Company Limited </h1>
+                    <h1>  FWD Life Insurance Public Company Limited </h1> 
                     <form id="edit-item-form" onSubmit={this.handleAdd}>
                         <input value={this.state.input} type="text" placeholder="Enter item name" id="new-candidate"
                                onChange={this.handleChange('input')}/>
@@ -257,8 +258,10 @@
    
                     </form>
                 </div> 
+                 
             ); 
         }
+ 
     }
 
     ReactDOM.render(

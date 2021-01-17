@@ -52,11 +52,9 @@
                 updateSettings = handler;
             },
             addCandidate: function (v) {
-                console.log(v);
                 $.post('/addCandidate', {'candidate': v});
             },
             addCandidates: function (v) {
-                console.log(v);
                 $.post('/addCandidates', {'candidates': v});
             },
             removeCandidate: function (v) {
